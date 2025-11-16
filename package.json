@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "Has map",
   "version": "1.0.0",
-  "description": "Template repo for HTML/CSS/JS projects",
+  "description": "Simple hash map for TOP",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

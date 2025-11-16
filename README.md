@@ -1,2 +1,3 @@
-# template-js
-Template repo for HTML/CSS/JS projects
+# Hash map
+
+Simple hash map by [joeypizzas](https://github.com/joeypizzas).
