@@ -7,6 +7,7 @@
 ## How do you plan to design the application state?
 
 - hashMap class that creates the hashMap object. It's then exported to the JS index where it's tested.
+  export
 
 ## How do you plan to organize your project files?
 
