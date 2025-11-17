@@ -52,3 +52,21 @@
     - Checks whether buckets has that specific key. If so, calls delete buckets.hashed(key) and length--. Else return false.
   - length():
     - Returns length key.
+  - clear():
+    - sets buckets to {};
+    - sets length to 0.
+  - keys():
+    - initializes hashMapKeys.
+    - For of loop with buckets.keys. Adds each key to the new array.
+    - Returns array.
+  - values():
+    - initializes hashMapValues.
+    - For of loop with buckets.values. Adds each value to the new array.
+    - Returns array.
+  - entries():
+    - initializes hashMapKVPs.
+    - For off loop with buckets.keys.
+      - Initialize new variable and set it equal to string with value of key and value.
+      - Push it to array.
+    - Returns array.
+- Go back to the set method and add functionality for collisions.
