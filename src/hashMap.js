@@ -25,17 +25,49 @@ export class HashMap {
 
   increaseCapacity() {
     this.capacity = this.capacity * 2;
+
     const increasedBuckets = {};
+    for (let i = 0; i < this.capacity; i++) {
+      increasedBuckets[i] = [];
+    }
+
     for (const key of Object.keys(this.buckets)) {
       const bucket = this.buckets[key];
       for (const entry of bucket) {
         const newIndex = this.hash(entry.key);
-        if (!increasedBuckets[newIndex]) {
-          increasedBuckets[newIndex] = [];
-        }
         increasedBuckets[newIndex].push(entry);
       }
     }
     this.buckets = increasedBuckets;
+  }
+
+  set(key, value) {
+    const hashedKey = this.hash(key);
+    const bucket = this.buckets[hashedKey];
+
+    for (const entry of bucket) {
+      if (entry.key === key) {
+        entry.value = value;
+        return;
+      }
+    }
+
+    this.buckets[hashedKey].push({ key, value });
+    this.length++;
+
+    if (this.length / this.capacity > this.loadFactor) this.increaseCapacity();
+  }
+
+  get(key) {
+    const hashedKey = this.hash(key);
+    const bucket = this.buckets[hashedKey];
+
+    for (const entry of bucket) {
+      if (entry.key === key) {
+        return entry.value;
+      }
+    }
+
+    return null;
   }
 }
